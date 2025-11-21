@@ -11,11 +11,11 @@ except Exception as e:
     print(f"Error: {e}")
 
 #переходим
-os.chdir("Управление_файлами")
+os.chdir("dir_name")
 print(f"Переходим в директорию: {os.getcwd()}")
 
 #1файл
-with open("text1.txt", 'w', encoding='utf-8') as file1:
+with open("file1.txt", 'w', encoding='utf-8') as file1:
     file1.write('Первый файл\n')
 print('Файл "file1.txt" успешно создан!')
 
@@ -33,37 +33,46 @@ for file in files:
 
 #удаляем 1 из созданных файлов
 try:
-    os.remove(C:\Users\Ирина\Desktop\Python313\test_repository\Управление_файлами\file2.txt)
+    os.remove(file2.txt)
     print("Файл 'file2.txt' успешно уничтожен!")
-except Error as e:
+except Exception as e:
     print(f"Ошибка: {e}")
 
 #создаем поддиректорию
 dir_name2 = "Поддиректория"
 try:
     os.mkdir(dir_name2)
-    print("Директория "dir_name2" создана успешно!")
+    print(f"Директория "{dir_name2}" создана успешно!")
 except Exception as e:
     print(f"Ошибка: {e}")
 
 #перемещение файла
 try:
-    os.rename("Управление_файлами\text1.txt", "Поддиректория\text1.txt")
+    os.rename("file1.txt", os.path.join(dir_name2, "file1.txt")
     print(Файл "file1.txt"успешно перемещен...)
 except Exception as e:
     print(f"Ошибка: {e}")
 
+#Возврат в родительскую директорию для возможности удаления
+os.chdir("test_repository")
+
 #удаление директории вместе с содержимым
 try:
-    for item in os.listdir("Управление_файлами"):
-        path = os.path.join("Управление_файлами", item)
+    for item in os.listdir(dir_name):
+        path = os.path.join(dir_name, item)
 
         #на предмет файлов
         if os.path.isfile(path):
             os.remove(path)
             print(f"Удален файл: {item}")
-        #на предмет поддиректорий
+
+        # на предмет поддиректорий
         elif os.path.isdir(path):
+            #сначала очистка
+            for sub_item in os.listdir(path):
+                sub_path=os.path.join(path, sub_item)
+                if os.path.isfile(sub_path):
+                    os.remove(sub_path)
             os.rmdir(path)
             print(f"Удалена поддиректория: {item}")
     os.rmdir("Управление_файлами")
