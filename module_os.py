@@ -11,7 +11,7 @@ except Exception as e:
     print(f"Error: {e}")
 
 #переходим
-os.chdir("dir_name")
+os.chdir(dir_name)
 print(f"Переходим в директорию: {os.getcwd()}")
 
 #1файл
@@ -33,7 +33,7 @@ for file in files:
 
 #удаляем 1 из созданных файлов
 try:
-    os.remove(file2.txt)
+    os.remove("file2.txt")
     print("Файл 'file2.txt' успешно уничтожен!")
 except Exception as e:
     print(f"Ошибка: {e}")
@@ -42,19 +42,19 @@ except Exception as e:
 dir_name2 = "Поддиректория"
 try:
     os.mkdir(dir_name2)
-    print(f"Директория "{dir_name2}" создана успешно!")
+    print(f'Директория "{dir_name2}" создана успешно!')
 except Exception as e:
     print(f"Ошибка: {e}")
 
 #перемещение файла
 try:
     os.rename("file1.txt", os.path.join(dir_name2, "file1.txt")
-    print(Файл "file1.txt"успешно перемещен...)
+    print('Файл "file1.txt"успешно перемещен...')
 except Exception as e:
     print(f"Ошибка: {e}")
 
 #Возврат в родительскую директорию для возможности удаления
-os.chdir("test_repository")
+os.chdir("..")
 
 #удаление директории вместе с содержимым
 try:
@@ -75,8 +75,8 @@ try:
                     os.remove(sub_path)
             os.rmdir(path)
             print(f"Удалена поддиректория: {item}")
-    os.rmdir("Управление_файлами")
-    print("Директория "Управление_файлами" успешно уничтожена!")
+    os.rmdir(dir_name)
+    print('Директория "Управление_файлами" успешно уничтожена!')
 except Exception as e:
     print(f"Ошибочка вышла: {e}")
 
