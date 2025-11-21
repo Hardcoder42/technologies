@@ -6,7 +6,7 @@ import os
 dir_name="Управление_файлами"
 try:
     os.mkdir(dir_name)
-    print("Директория "Управление_файлами" успешно создана!")
+    print('Директория "Управление_файлами" успешно создана!')
 except Exception as e:
     print(f"Error: {e}")
 
@@ -42,13 +42,13 @@ except Exception as e:
 dir_name2 = "Поддиректория"
 try:
     os.mkdir(dir_name2)
-    print(f'Директория "{dir_name2}" создана успешно!')
+    print(f'Поддиректория "{dir_name2}" создана успешно!')
 except Exception as e:
     print(f"Ошибка: {e}")
 
 #перемещение файла
 try:
-    os.rename("file1.txt", os.path.join(dir_name2, "file1.txt")
+    os.rename("file1.txt", os.path.join(dir_name2, "file1.txt"))
     print('Файл "file1.txt"успешно перемещен...')
 except Exception as e:
     print(f"Ошибка: {e}")
@@ -76,7 +76,7 @@ try:
             os.rmdir(path)
             print(f"Удалена поддиректория: {item}")
     os.rmdir(dir_name)
-    print('Директория "Управление_файлами" успешно уничтожена!')
+    print(f'Директория {dir_name} успешно уничтожена!')
 except Exception as e:
     print(f"Ошибочка вышла: {e}")
 
