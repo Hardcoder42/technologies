@@ -1,4 +1,4 @@
-"""
+
 #EX 1(Counter)
 from collections import Counter
 
@@ -67,14 +67,16 @@ dq.append(8)
 print(f"Append: {dq}")
 dq.appendleft(9)
 print(f"Appendleft: {dq}")
-"""
-#EX 5(deque простая очередь)
+
+# EX 5(deque простая очередь)
 from collections import deque
 
-#функция для добавления и извлечения элементов
+
+# функция для добавления и извлечения элементов
 def create_deque():
     """создает и возвращает пустую двустороннюю очередь"""
     return deque()
+
 
 def add_element(dq, element, side='right'):
     """добавляет элемент слева и справа в очередь"""
@@ -86,33 +88,35 @@ def add_element(dq, element, side='right'):
         raise ValueError("side должен быть 'left' или 'right'")
     return dq
 
+
 def del_element(dq, side='right'):
     """извлекает элемент слева и справа из очереди"""
     if not dq:
-        return None, dq #проверка на пустоты
+        return None, dq  # проверка на пустоты
 
     if side == 'right':
-        dq.pop()
+        element = dq.pop()  # сохраняем результат
     elif side == 'left':
-        dq.popleft()
+        element = dq.popleft()  # сохраняем результат
     else:
         raise ValueError("side должен быть 'left' или 'right'")
-    return element, dq
+    return element, dq  # возвращаем элемент и очередь
 
-#создаем пустой deque
+
+# создаем пустой deque
 dq = create_deque()
 print(f"Создана deque: {dq}")
 
-#используем написанные функции
-dq = add_element(dq,2,'right')
+# используем написанные функции
+dq = add_element(dq, 2, 'right')
 print(f"Добавлен элемент: {dq}")
-dq = add_element(dq,4,'left')
+dq = add_element(dq, 4, 'left')
 print(f"Добавлен элемент: {dq}")
-dq = add_element(dq,6,'right')
+dq = add_element(dq, 6, 'right')
 print(f"Добавлен элемент: {dq}")
-dq = add_element(dq,9,'left')
+dq = add_element(dq, 9, 'left')
 print(f"Добавлен элемент: {dq}")
-element, dq = del_element(dq,'left')
+element, dq = del_element(dq, 'left')
 print(f"Извлечен элемент: {element}, остаток: {dq}")
 element, dq = del_element(dq, 'right')
 print(f"Извлечен элемент: {element}, остаток: {dq}")
