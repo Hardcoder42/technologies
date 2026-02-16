@@ -1,0 +1,412 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>be1.ru</title>
+</head>
+<body>
+<p dir="ltr">&lt;!DOCTYPE html&gt;<br />
+&lt;html lang=&quot;ru&quot;&gt;<br />
+&lt;head&gt;<br />
+&nbsp; &lt;meta charset=&quot;UTF-8&quot;&gt;<br />
+&nbsp; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br />
+&nbsp; &lt;title&gt;Quicklink &mdash; Front-End разработчик&lt;/title&gt;<br />
+&nbsp; &lt;style&gt;<br />
+&nbsp;&nbsp;&nbsp; /* Сброс стилей и базовые настройки */<br />
+&nbsp;&nbsp;&nbsp; * {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 0;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 0;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; box-sizing: border-box;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; body {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background-color: #F5F0EA;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* тёплый светлый фон, как на скриншоте */<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-family: system-ui, -apple-system, &#39;Segoe UI&#39;, Roboto, &#39;Helvetica Neue&#39;, sans-serif;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #1E1E1E;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line-height: 1.4;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 40px 24px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: flex;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; justify-content: center;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .card {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max-width: 1000px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; width: 100%;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: #FFFFFF;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-radius: 48px 48px 40px 40px;&nbsp; /* скругление как на изображении */<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 48px 48px 56px 48px;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; /* ===== СЕТКА ===== */<br />
+&nbsp;&nbsp;&nbsp; .grid {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: grid;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: 1fr 1fr;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* две равные колонки */<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gap: 48px 40px;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; /* все заголовки секций */<br />
+&nbsp;&nbsp;&nbsp; .section-title {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 14px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; letter-spacing: 1.5px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-transform: uppercase;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #A68B7A;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /* приглушённый терракотовый/коричневый */<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight: 500;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-bottom: 20px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-bottom: 1px solid #EADDD3;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding-bottom: 8px;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; /* ===== ЛЕВАЯ КОЛОНКА ===== */<br />
+&nbsp;&nbsp;&nbsp; .left-col {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: flex;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flex-direction: column;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gap: 32px;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; /* блок соцсетей (верхний) */<br />
+&nbsp;&nbsp;&nbsp; .social-block {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: #FDFAF7;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-radius: 24px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 20px 24px;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .social-links {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: flex;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flex-wrap: wrap;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gap: 16px 24px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-top: 6px;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .social-links a {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-decoration: none;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #1E1E1E;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 16px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight: 450;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: inline-flex;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; align-items: center;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gap: 6px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-bottom: 1px solid transparent;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transition: border-color 0.2s;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .social-links a:hover {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-bottom-color: #A68B7A;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; /* маленький псевдо-галочки/стрелки у ссылок (как на скрине) */<br />
+&nbsp;&nbsp;&nbsp; .social-links a::after {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; content: &quot;↗&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 14px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #A68B7A;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-left: 2px;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; /* для ссылок без стрелки (если нужно), но пока оставим у всех */</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; /* блок &quot;СОЦСЕТИ&quot; (второй блок соцсетей) */<br />
+&nbsp;&nbsp;&nbsp; .social-alt .social-links a {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight: 400;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; /* БИО */<br />
+&nbsp;&nbsp;&nbsp; .bio p {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 15px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line-height: 1.6;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #2A2A2A;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-bottom: 16px;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .companies {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: flex;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gap: 24px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-top: 8px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight: 500;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #5E4F44;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 15px;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .companies span {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: relative;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .companies span:not(:last-child)::after {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; content: &quot;&bull;&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; position: absolute;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; right: -14px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #C9B3A4;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; /* ОПЫТ РАБОТЫ */<br />
+&nbsp;&nbsp;&nbsp; .job-item {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-bottom: 20px;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .job-header {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: flex;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; justify-content: space-between;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight: 600;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 16px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-bottom: 2px;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .job-company {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #1E1E1E;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .job-date {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight: 400;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #8F7A6B;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 15px;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .job-sub {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: flex;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gap: 12px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #8F7A6B;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 14px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-bottom: 4px;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .job-sub a {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #8F7A6B;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-decoration: none;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-bottom: 1px dotted #C9B3A4;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .job-sub a:hover {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-bottom: 1px solid #8F7A6B;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .job-desc {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 14px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #3D3D3D;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line-height: 1.5;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max-width: 90%;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; /* ===== ПРАВАЯ КОЛОНКА ===== */<br />
+&nbsp;&nbsp;&nbsp; .right-col {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: flex;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flex-direction: column;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gap: 32px;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; /* ПОРТФОЛИО */<br />
+&nbsp;&nbsp;&nbsp; .portfolio-item {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-bottom: 28px;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .portfolio-title {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight: 600;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 20px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-bottom: 4px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; letter-spacing: -0.01em;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .portfolio-desc {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 14px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #4A4A4A;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-bottom: 8px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; line-height: 1.5;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max-width: 90%;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .portfolio-link {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: inline-flex;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; align-items: center;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gap: 4px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 15px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight: 500;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #1E1E1E;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; text-decoration: none;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-bottom: 2px solid #E2C7B7;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding-bottom: 2px;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .portfolio-link::after {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; content: &quot;&rarr;&quot;;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 18px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #A68B7A;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transition: transform 0.2s;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .portfolio-link:hover::after {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; transform: translateX(4px);<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; /* аккуратно повторим название &quot;Quicklink&quot; сверху */<br />
+&nbsp;&nbsp;&nbsp; .top-label {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; display: flex;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; justify-content: space-between;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; align-items: center;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-bottom: 24px;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .quicklink-brand {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-size: 22px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight: 500;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #1E1E1E;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; letter-spacing: -0.3px;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; .quicklink-brand span {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; color: #A68B7A;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; font-weight: 400;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; /* разделительная линия как на скриншоте (тонкая) */<br />
+&nbsp;&nbsp;&nbsp; .divider-light {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; height: 1px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; background: #EADDD3;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin: 8px 0 16px 0;<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; /* адаптация для мобильных */<br />
+&nbsp;&nbsp;&nbsp; @media (max-width: 700px) {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .card {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; padding: 32px 20px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; border-radius: 32px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .grid {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grid-template-columns: 1fr;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gap: 24px;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .job-desc, .portfolio-desc {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; max-width: 100%;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp; }</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; /* мелкие детали для имитации Figma */<br />
+&nbsp;&nbsp;&nbsp; .mono-list {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; list-style: none;<br />
+&nbsp;&nbsp;&nbsp; }<br />
+&nbsp;&nbsp;&nbsp; .mono-list li {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; margin-bottom: 6px;<br />
+&nbsp;&nbsp;&nbsp; }<br />
+&nbsp; &lt;/style&gt;<br />
+&lt;/head&gt;<br />
+&lt;body&gt;<br />
+&nbsp; &lt;div class=&quot;card&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;!-- шапка с названием (Quicklink) как в левом верхнем углу макета --&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;div class=&quot;top-label&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;quicklink-brand&quot;&gt;🔗 Quicklink &lt;span&gt;&mdash; Front-End&lt;/span&gt;&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- можно оставить пустой div для симметрии --&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;/div&gt;</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; &lt;!-- основной контент: две колонки --&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;div class=&quot;grid&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- ЛЕВАЯ КОЛОНКА --&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;left-col&quot;&gt;</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- первая группа соцсетей (Мой LinkedIn и т.д.) --&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;social-block&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;social-links&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;a href=&quot;#&quot;&gt;Мой LinkedIn&lt;/a&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;a href=&quot;#&quot;&gt;Код в GitHub&lt;/a&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;a href=&quot;#&quot;&gt;Фото в Instagram&lt;/a&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;a href=&quot;#&quot;&gt;Напиши в Telegram&lt;/a&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- вторая группа соцсетей (СОЦСЕТИ) --&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;social-alt&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;section-title&quot;&gt;СОЦСЕТИ&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;social-links&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;a href=&quot;#&quot;&gt;Мой LinkedIn&lt;/a&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;a href=&quot;#&quot;&gt;Подписаться в Twitter&lt;/a&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;a href=&quot;#&quot;&gt;Вложите на YouTube&lt;/a&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- БИО --&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;bio&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;section-title&quot;&gt;БИО&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;p&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Инновационный Front-End разработчик с 5-летним опытом создания и сопровождения адаптивных веб-сервисов в интерфейсах индустрии. В совершенстве владею HTML, CSS, JavaScript, а также современными библиотеками и фреймворками. Созданы новые функции и возможности на сайтах электронной коммерции с использованием Java, Ajax, SAS и JSON. Увлечен юзабилити, обладаю практическими знаниями Figma и Adobe Photoshop.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/p&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;companies&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;span&gt;Apple&lt;/span&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;span&gt;IBM&lt;/span&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;span&gt;Microsoft&lt;/span&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- ОПЫТ РАБОТЫ --&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;experience&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;section-title&quot;&gt;ОПЫТ РАБОТЫ&lt;/div&gt;</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;job-item&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;job-header&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;span class=&quot;job-company&quot;&gt;Arrival (2021-по настоящее время)&lt;/span&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;job-sub&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;a href=&quot;#&quot;&gt;<a href="http://arrival.com">arrival.com</a>&lt;/a&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;span&gt;Senior Front-End разработчик&lt;/span&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;job-item&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;job-header&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;span class=&quot;job-company&quot;&gt;Apple (2018-2021)&lt;/span&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;job-sub&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;a href=&quot;#&quot;&gt;<a href="http://apple.com">apple.com</a>&lt;/a&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;span&gt;Middle+ Front-End разработчик&lt;/span&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;job-item&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;job-header&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;span class=&quot;job-company&quot;&gt;IBM (2017-2018)&lt;/span&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;job-sub&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;a href=&quot;#&quot;&gt;<a href="http://ibm.com">ibm.com</a>&lt;/a&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;span&gt;Middle Front-End разработчик&lt;/span&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt; &lt;!-- левая колонка конец --&gt;</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- ПРАВАЯ КОЛОНКА --&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;right-col&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- ПОРТФОЛИО --&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;portfolio&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;section-title&quot;&gt;ПОРТФОЛИО&lt;/div&gt;</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;portfolio-item&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;portfolio-title&quot;&gt;Arrival Dashboard&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;portfolio-desc&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; В качестве лидера разработчика участвовал в создании и развитии систем аналитики для британского стартапа<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;a href=&quot;#&quot; class=&quot;portfolio-link&quot;&gt;Посмотреть&lt;/a&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;portfolio-item&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;portfolio-title&quot;&gt;MacOS Finder&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;portfolio-desc&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Работал над созданием и развитием файл-менеджера Finder в MacOS<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;a href=&quot;#&quot; class=&quot;portfolio-link&quot;&gt;Посмотреть&lt;/a&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;portfolio-item&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;portfolio-title&quot;&gt;IBM Business Solutions&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div class=&quot;portfolio-desc&quot;&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Разрабатывал высоконагруженные масштабируемые и переиспользуемые компоненты для бизнес-решений<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;a href=&quot;#&quot; class=&quot;portfolio-link&quot;&gt;Посмотреть&lt;/a&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt;</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;!-- дополнительная линия или отступ для визуального равновесия --&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;div style=&quot;height: 4px;&quot;&gt;&lt;/div&gt;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;/div&gt; &lt;!-- правая колонка конец --&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;/div&gt; &lt;!-- grid конец --&gt;</p>
+
+<p dir="ltr">&nbsp;&nbsp;&nbsp; &lt;!-- небольшая декоративная линия внизу (как в макете) --&gt;<br />
+&nbsp;&nbsp;&nbsp; &lt;div class=&quot;divider-light&quot; style=&quot;margin-top: 40px;&quot;&gt;&lt;/div&gt;<br />
+&nbsp; &lt;/div&gt; &lt;!-- card --&gt;<br />
+&lt;/body&gt;<br />
+&lt;/html&gt;</p>
+</body>
+</html>
